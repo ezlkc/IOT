@@ -1,0 +1,80 @@
+<<<<<<< HEAD
+<style>
+body{
+	width: 480px;
+	margin: 0 auto;
+}
+.btn {
+  text-decoration: none;
+  border: 0;
+  border-radius: 3px;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
+  display: inline-block;
+  line-height: 16px;
+  margin: 6px 8px 6px 0;
+  min-width: 88px;
+  padding: 10px ;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.1s all ease;
+}
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,.4);
+}
+.btn-default {
+    background: #fff;
+    border: #dbdbdb;
+    color: #2B85E7;
+
+}
+.btn-primary {
+  background: #2B85E7;
+  border: #dbdbdb;
+  color: #fff;
+}
+</style>
+<html>
+	<head>
+    <title>Welcome Panda</title>
+    <script src="{{url_for('static', filename = 'jquery.min.js')}}"></script>
+</head>
+<body>
+<h1>Hello I'm Dashboard</h1>
+<<<<<<< HEAD
+<div>
+<a href="#"id="sensor-tsl" class="btn btn-default">get sensor tsl</a>
+<div id="result-tsl"></div>
+</div>
+<div>
+<a href="#" id="sensor-si" class="btn btn-primary">get sensor si</a>
+<div id="result-si"></div>
+</div>
+<a href="#" id="sensor-tsl">Get Sensor TSL</a>
+<a href="#" id="sensor-si">Get Sensor SI</a>
+
+<script>
+  $(function() {
+    $('a#sensor-si').bind('click', function() {
+      $.get('http://localhost:5000/si-sensor',
+      function(data) {
+        $("#result-si").text(data);
+      });
+      return false;
+    });
+  });
+  $(function() {
+    $('a#sensor-tsl').bind('click', function() {
+      $.get('http://localhost:5000/tsl-sensor',
+      function(data) {
+        $("#result-tsl").text(data);
+      });
+      return false;
+    });
+  });
+</script>
+
+<div id="result-tsl"></div>
+<div id="result-si"></div>
+</body>
+</html>
